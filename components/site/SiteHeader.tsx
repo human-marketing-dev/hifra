@@ -12,7 +12,7 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
-import { Wordmark } from "@/components/site/Wordmark";
+import { Logo } from "@/components/site/Logo";
 import { EMPRESAS, type Empresa } from "@/lib/empresas";
 
 const ENLACE: React.CSSProperties = {
@@ -103,7 +103,23 @@ export function SiteHeader() {
           aria-label="HIFRA Grupo Inmobiliario"
           style={{ display: "flex", alignItems: "center", textDecoration: "none" }}
         >
-          <Wordmark tone={onDark ? "light" : "dark"} size={scrolled ? 20 : 22} />
+          {/* Las dos versiones se montan a la vez y se cruzan por opacidad:
+              así el cambio al pasar a barra crema no espera a una descarga. */}
+          <span style={{ position: "relative", display: "block", lineHeight: 0 }}>
+            <Logo marca="hifra" fondo="claro" alto={30} priority />
+            <Logo
+              marca="hifra"
+              fondo="oscuro"
+              alto={30}
+              priority
+              style={{
+                position: "absolute",
+                inset: 0,
+                opacity: onDark ? 1 : 0,
+                transition: "opacity var(--dur-base) var(--ease-out)",
+              }}
+            />
+          </span>
         </Link>
 
         <nav className="hf-nav-desktop" style={{ display: "flex", alignItems: "center", gap: "var(--space-7)" }}>

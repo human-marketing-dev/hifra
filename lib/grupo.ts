@@ -34,7 +34,7 @@ export const BOILERPLATE = {
   corto:
     "HIFRA Grupo Inmobiliario agrupa seis empresas especializadas del sector inmobiliario: comercialización, expansión corporativa, estructuración comercial, inversión, desarrollo y construcción, con sede en Monterrey, Nuevo León.",
   medio:
-    "HIFRA Grupo Inmobiliario agrupa seis empresas especializadas del sector inmobiliario en el noreste de México: Epicus Inmobiliaria en comercialización, F&S Real Estate Solutions en expansión corporativa, Epicus Growth Partner en estructuración comercial, ALFRA Inversiones en inversión, ALFRA Desarrollos en desarrollo y Grupo FAC en construcción. Un cliente entra por la empresa que ejecuta su oportunidad y queda respaldado por todo el grupo.",
+    "HIFRA Grupo Inmobiliario agrupa seis empresas especializadas del sector inmobiliario en el noreste de México: Epika en comercialización, F&S Real Estate Solutions en expansión corporativa, Lead Pro en estructuración comercial, ALFRA Inversiones en inversión, ALFRA Desarrollos en desarrollo y Grupo FAC en construcción. Un cliente entra por la empresa que ejecuta su oportunidad y queda respaldado por todo el grupo.",
 } as const;
 
 interface Contacto {

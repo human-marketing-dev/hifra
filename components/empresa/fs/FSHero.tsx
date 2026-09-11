@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Icon } from "@/components/ui/Icon";
 import { DarkBackdrop } from "@/components/site/DarkBackdrop";
-import { CIFRAS_HERO, FS, HERO } from "@/lib/fs";
+import { Logo } from "@/components/site/Logo";
+import { CIFRAS_HERO, HERO } from "@/lib/fs";
 
 export function FSHero() {
   return (
@@ -39,20 +40,7 @@ export function FSHero() {
             {HERO.eyebrow}
           </Eyebrow>
 
-          <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "var(--space-5)" }}>
-            <Icon name="globe" size={30} color="var(--wood-300)" stroke={1.4} />
-            <span
-              style={{
-                fontFamily: "var(--font-display)",
-                fontWeight: 700,
-                fontSize: "clamp(20px, 2.4vw, 26px)",
-                letterSpacing: "-0.01em",
-                color: "var(--neutral-0)",
-              }}
-            >
-              {FS.nombre}
-            </span>
-          </div>
+          <Logo marca="fs" fondo="oscuro" alto={40} priority style={{ marginBottom: "var(--space-6)" }} />
 
           <h1
             style={{

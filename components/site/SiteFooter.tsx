@@ -4,7 +4,7 @@
 import React from "react";
 import Link from "next/link";
 import { Icon } from "@/components/ui/Icon";
-import { Wordmark } from "@/components/site/Wordmark";
+import { Logo } from "@/components/site/Logo";
 import { EMPRESAS } from "@/lib/empresas";
 import { BOILERPLATE, CONTACTO, correoHref, telefonoHref } from "@/lib/grupo";
 
@@ -43,7 +43,7 @@ export function SiteFooter() {
           style={{ paddingBottom: "var(--space-9)", borderBottom: "1px solid var(--border-on-dark)", alignItems: "start" }}
         >
           <div>
-            <Wordmark tone="light" size={30} style={{ marginBottom: "var(--space-5)" }} />
+            <Logo marca="hifra" fondo="oscuro" alto={46} style={{ marginBottom: "var(--space-5)" }} />
             <p
               style={{
                 fontFamily: "var(--font-serif)",

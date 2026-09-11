@@ -1,7 +1,7 @@
 /* Landing · bloque 03 — Las empresas.
    Seis tarjetas con salida a la página de cada empresa. El orden es el
-   canónico del brief: Epicus Inmobiliaria, F&S y Epicus Growth Partner
-   van seguidas para que la diferencia entre las tres se lea de corrido. */
+   canónico del brief: Epika, F&S y Lead Pro van seguidas para que la
+   diferencia entre las tres se lea de corrido. */
 import React from "react";
 import { Card } from "@/components/ui/Card";
 import { Icon } from "@/components/ui/Icon";

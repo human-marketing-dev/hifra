@@ -7,6 +7,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Icon } from "@/components/ui/Icon";
+import { Logo } from "@/components/site/Logo";
+import { altoFirma } from "@/lib/logos";
 import { DarkBackdrop } from "@/components/site/DarkBackdrop";
 import { GRUPO } from "@/lib/grupo";
 import type { Empresa } from "@/lib/empresas";
@@ -43,27 +45,31 @@ export function EmpresaHero({ empresa }: { empresa: Empresa }) {
             {empresa.frente}
           </Eyebrow>
 
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "16px",
-              marginBottom: "var(--space-5)",
-            }}
-          >
-            <Icon name={empresa.icono} size={30} color="var(--wood-300)" stroke={1.4} />
-            <span
-              style={{
-                fontFamily: "var(--font-display)",
-                fontWeight: 700,
-                fontSize: "clamp(20px, 2.4vw, 26px)",
-                letterSpacing: "-0.01em",
-                color: "var(--neutral-0)",
-              }}
-            >
-              {empresa.nombre}
-            </span>
-          </div>
+          {/* Con logo entregado manda el logo; si no, el lockup tipográfico. */}
+          {empresa.logo ? (
+            <Logo
+              marca={empresa.logo}
+              fondo="oscuro"
+              alto={altoFirma(empresa.logo)}
+              priority
+              style={{ marginBottom: "var(--space-6)" }}
+            />
+          ) : (
+            <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "var(--space-5)" }}>
+              <Icon name={empresa.icono} size={30} color="var(--wood-300)" stroke={1.4} />
+              <span
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontWeight: 700,
+                  fontSize: "clamp(20px, 2.4vw, 26px)",
+                  letterSpacing: "-0.01em",
+                  color: "var(--neutral-0)",
+                }}
+              >
+                {empresa.nombre}
+              </span>
+            </div>
+          )}
 
           <h1
             style={{

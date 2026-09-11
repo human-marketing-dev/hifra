@@ -3,14 +3,14 @@
 
    El orden del arreglo es el orden canónico del brief: es el mismo de
    la tabla §5, el del boilerplate §9.3 y el que pide la nota de
-   contenido de la landing —Epicus Inmobiliaria, F&S y Epicus Growth
-   Partner juntos, para que la diferencia entre las tres se lea de
-   corrido.
+   contenido de la landing —Epika, F&S y Lead Pro juntos, para que la
+   diferencia entre las tres se lea de corrido.
 
    `sitio` es la salida al sitio propio de cada empresa. Mientras esté
    vacío, la ficha no muestra el botón de salida. */
 
 import type { IconName } from "@/components/ui/Icon";
+import type { MarcaLogo } from "@/lib/logos";
 
 export interface Servicio {
   titulo: string;
@@ -39,6 +39,11 @@ export interface Empresa {
   /** Pruebas publicables. Vacío mientras no haya cifras confirmadas. */
   pruebas: string[];
   icono: IconName;
+  /**
+   * Clave en `lib/logos.ts`. Sin logo entregado, la página cae en el
+   * tratamiento tipográfico de respaldo (icono + nombre).
+   */
+  logo?: MarcaLogo;
   /** URL del sitio propio. Vacío = la empresa aún no tiene sitio. */
   sitio: string;
   /**
@@ -50,10 +55,10 @@ export interface Empresa {
 
 export const EMPRESAS: Empresa[] = [
   {
-    slug: "epicus-inmobiliaria",
-    nombre: "Epicus Inmobiliaria",
-    nombreCorto: "Epicus Inmobiliaria",
-    frente: "Comercialización",
+    slug: "epika",
+    nombre: "Epika",
+    nombreCorto: "Epika",
+    frente: "Agencia Inmobiliaria",
     titular: "La transacción inmobiliaria, resuelta de principio a fin.",
     resumen:
       "Compra, venta y renta de bienes inmuebles. Asesora al cliente en la transacción y opera el inventario del mercado.",
@@ -87,7 +92,9 @@ export const EMPRESAS: Empresa[] = [
     },
     pruebas: [],
     icono: "home",
-    sitio: "https://epicus.com.mx",
+    logo: "epika",
+    // Sitio propio de Epika: pendiente.
+    sitio: "",
   },
   {
     slug: "fs-real-estate-solutions",
@@ -127,17 +134,15 @@ export const EMPRESAS: Empresa[] = [
     },
     pruebas: [],
     icono: "globe",
+    logo: "fs",
     // F&S se presenta como la división inmobiliaria de Flores Serna Group.
     sitio: "https://www.floresserna.com",
     paginaPropia: true,
   },
   {
-    slug: "epicus-growth-partner",
-    nombre: "Epicus Growth Partner",
-    // El brief §4 pide «Epicus» en menciones subsecuentes, pero aquí
-    // conviven dos empresas Epicus: se conserva el nombre completo
-    // hasta que se confirme la razón comercial visible (§4, pendiente).
-    nombreCorto: "Epicus Growth Partner",
+    slug: "lead-pro",
+    nombre: "Lead Pro",
+    nombreCorto: "Lead Pro",
     frente: "Estructuración comercial",
     titular: "Estructuramos y operamos tu departamento comercial.",
     resumen:
@@ -169,15 +174,16 @@ export const EMPRESAS: Empresa[] = [
       promesa: "Estructuramos el equipo comercial que coloca tu producto y lo operamos hasta el cierre.",
     },
     pruebas: [],
-    // Comparte sitio con Epicus Inmobiliaria.
     icono: "target",
-    sitio: "https://epicus.com.mx",
+    logo: "lead-pro",
+    // Sitio propio de Lead Pro: pendiente.
+    sitio: "",
   },
   {
     slug: "alfra-inversiones",
     nombre: "ALFRA Inversiones",
     nombreCorto: "ALFRA Inversiones",
-    frente: "Inversión",
+    frente: "Inversiones Inmobiliarias",
     titular: "Maximizamos el rendimiento de tu inversión inmobiliaria.",
     resumen:
       "Estructura y ejecuta la estrategia de inversión inmobiliaria del cliente, con evaluación de oportunidades y acompañamiento de la operación.",
@@ -210,6 +216,7 @@ export const EMPRESAS: Empresa[] = [
     },
     pruebas: [],
     icono: "trending-up",
+    logo: "alfra-inversiones",
     sitio: "",
   },
   {
@@ -247,6 +254,7 @@ export const EMPRESAS: Empresa[] = [
     },
     pruebas: [],
     icono: "layers",
+    logo: "alfra-desarrollos",
     sitio: "",
   },
   {
@@ -289,6 +297,7 @@ export const EMPRESAS: Empresa[] = [
       "Proyectos llave en mano entregados",
     ],
     icono: "hard-hat",
+    logo: "grupo-fac",
     sitio: "https://grupofac.com/",
   },
 ];
